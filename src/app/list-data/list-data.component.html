@@ -1,0 +1,35 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <button class="btn btn-primary" routerLink="/create-review">Add to Sheet</button>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Residence</th>
+                <th scope="col">Native</th>
+                <th scope="col">Rating</th>
+                <th scope="col">Testimony</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let datum of data; let i = index">
+                <th scope="row">{{ datum.name }}</th>
+                <td>{{ datum.email }}</td>
+                <td>{{ datum.residence }}</td>
+                <td>{{ datum.native }}</td>
+                <td>{{ datum.rating }}</td>
+                <td>{{ datum.testimony }}</td>
+                <td (click)="editAGivenReview(i)"><button class="btn btn-secondary" >Edit</button></td>
+                <td (click)="deleteAGivenReview(i)"><button class="btn btn-danger" >Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
